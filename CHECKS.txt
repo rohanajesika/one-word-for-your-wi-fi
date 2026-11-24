@@ -1,0 +1,11 @@
+one-word-for-your-wi-fi checks (after revision, 2026-11-24 ~23:2x WIB)
+node24 exit 0, node22.21.1 exit 0, outputs byte-identical
+entry.txt: 'ghosting', 8 bytes, no newline, 8 chars, gate 1-20 PASS
+negative test WORD='ghost ing': exit 1, no entry.txt — validation works
+grader simulation (Node 22.21.1 /usr/local/bin/node22test, read-only entry
+folder, user 65534, no network via unshare -n, cwd /, MAKEFUN_OUTPUT_DIR
+to empty writable dir): exit 0 in 0.18s, output byte-identical 'ghosting'
+NOTE: a Node 22 copy under /tmp fails re-exec by the dropped user
+(EACCES via env/sh); the copy under /usr/local/bin works.
+main.ts: 116 lines, hand-written, 1 real revision after first write
+(byte-level read-back verification added), re-run after revision.
